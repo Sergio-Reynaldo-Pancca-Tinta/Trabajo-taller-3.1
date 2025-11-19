@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía - Álgebra Relacional con Entity Framework</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .infografia {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1a3a8f 0%, #2c5aa0 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .header h2 {
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+        
+        .universidad {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .facultad {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .curso {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        
+        .alumnos {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 15px;
+        }
+        
+        .alumno {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        
+        .contenido {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 25px;
+        }
+        
+        .seccion {
+            background: #f9fafc;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid #2c5aa0;
+        }
+        
+        .seccion h3 {
+            color: #1a3a8f;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e1e5eb;
+            font-size: 20px;
+        }
+        
+        .seccion ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .seccion li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #e1e5eb;
+            display: flex;
+            align-items: center;
+        }
+        
+        .seccion li:before {
+            content: "✓";
+            color: #2c5aa0;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .seccion li:last-child {
+            border-bottom: none;
+        }
+        
+        .operacion {
+            margin-bottom: 20px;
+        }
+        
+        .operacion h4 {
+            color: #1a3a8f;
+            margin-bottom: 10px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .operacion h4 span {
+            background: #1a3a8f;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+        
+        .codigo {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            margin-top: 10px;
+            overflow-x: auto;
+        }
+        
+        .footer {
+            background: #1a202c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+        
+        .footer a {
+            color: #63b3ed;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .conclusion {
+            background: linear-gradient(135deg, #2c5aa0 0%, #1a3a8f 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .conclusion h3 {
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        @media (max-width: 768px) {
+            .contenido {
+                grid-template-columns: 1fr;
+            }
+            
+            .alumnos {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="infografia">
+        <div class="header">
+            <div class="universidad">UNIVERSIDAD ANDINA DEL CUSCO</div>
+            <div class="facultad">FACULTAD DE INGENIERÍA Y ARQUITECTURA</div>
+            <div class="curso">BASE DE DATOS - Taller 3.1: Álgebra Relacional</div>
+            <h1>Explorando el Álgebra Relacional con Entity Framework</h1>
+            <h2>Implementación de operaciones con ADO.NET Entity Framework</h2>
+            
+            <div class="alumnos">
+                <div class="alumno">HUAMAN SANCHEZ RIVALDO</div>
+                <div class="alumno">PANCCA TINTA SERGIO REYNALDO</div>
+            </div>
+        </div>
+        
+        <div class="contenido">
+            <div class="seccion">
+                <h3>Introducción</h3>
+                <p>Implementación de operaciones básicas del álgebra relacional (Selección, Proyección y Renombramiento) utilizando ADO.NET Entity Framework y la base de datos PUBS.</p>
+                <p><strong>Objetivo:</strong> Demostrar la manipulación declarativa de datos mediante consultas LINQ.</p>
+                
+                <h3>Modelo de Datos</h3>
+                <p>Se utilizó el modelo PUBS provisto por SQL Server. El diagrama fue generado mediante el archivo pubs.edmx.</p>
+            </div>
+            
+            <div class="seccion">
+                <h3>Operaciones Implementadas</h3>
+                
+                <div class="operacion">
+                    <h4><span>σ</span> Selección</h4>
+                    <p>Filtrado de filas según condiciones específicas:</p>
+                    <ul>
+                        <li>5 consultas con diferentes tipos de predicados</li>
+                        <li>Condiciones de comparación, rango y pertenencia</li>
+                        <li>Filtrado de entidades específicas</li>
+                    </ul>
+                    <div class="codigo">
+                        // Ejemplo: Autores de California<br>
+                        var autoresCA = context.authors<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;.Where(a => a.state == "CA");
+                    </div>
+                </div>
+                
+                <div class="operacion">
+                    <h4><span>π</span> Proyección</h4>
+                    <p>Extracción de columnas específicas:</p>
+                    <ul>
+                        <li>5 consultas seleccionando subconjuntos de atributos</li>
+                        <li>Eliminación de duplicados cuando es necesario</li>
+                        <li>Selección de columnas relevantes</li>
+                    </ul>
+                    <div class="codigo">
+                        // Ejemplo: Solo nombres y apellidos<br>
+                        var nombres = context.authors<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;.Select(a => new { a.au_fname, a.au_lname });
+                    </div>
+                </div>
+                
+                <div class="operacion">
+                    <h4><span>ρ</span> Renombramiento</h4>
+                    <p>Cambio de nombre de atributos para mejorar claridad:</p>
+                    <ul>
+                        <li>5 consultas con atributos renombrados</li>
+                        <li>Facilita la integración con otras operaciones</li>
+                        <li>Mejora la legibilidad de los resultados</li>
+                    </ul>
+                    <div class="codigo">
+                        // Ejemplo: Renombrando columnas<br>
+                        var resultado = context.authors<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;.Select(a => new { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nombre = a.au_fname, <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Apellido = a.au_lname <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;});
+                    </div>
+                </div>
+            </div>
+            
+            <div class="seccion">
+                <h3>Entregables</h3>
+                <ul>
+                    <li>Implementación completa en C# con Entity Framework</li>
+                    <li>5 consultas por cada operación del álgebra relacional</li>
+                    <li>Interfaz gráfica con botones para ejecutar consultas</li>
+                    <li>Informe técnico en formato PDF</li>
+                    <li>Repositorio de código en GitHub</li>
+                    <li>Presentación oral de los resultados</li>
+                </ul>
+                
+                <h3>Tecnologías Utilizadas</h3>
+                <ul>
+                    <li>ADO.NET Entity Framework</li>
+                    <li>LINQ (Language Integrated Query)</li>
+                    <li>Base de datos PUBS de SQL Server</li>
+                    <li>Visual Studio / .NET Framework</li>
+                    <li>Git & GitHub para control de versiones</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="conclusion">
+            <h3>Conclusión</h3>
+            <p>La práctica permitió comprender cómo Entity Framework facilita la implementación de consultas inspiradas en el álgebra relacional utilizando sentencias LINQ. Además, se reforzó el uso del modelo edmx y el patrón de acceso a datos, demostrando la aplicabilidad de los conceptos teóricos en un entorno de desarrollo moderno.</p>
+        </div>
+        
+        <div class="footer">
+            <p><strong>Docente:</strong> HUGO ESPETIA HUAMANGA | <strong>Cusco - Perú 2025</strong></p>
+            <p>Repositorio GitHub disponible para revisión del código fuente</p>
+        </div>
+    </div>
+</body>
+</html>
